@@ -9,6 +9,11 @@ class TestBooksCollector:
         collector.add_new_book('Что делать, если ваш кот хочет вас убить')
         assert len(collector.get_books_genre()) == 2
 
+    def test_add_new_book(self, collector):
+        collector.add_new_book('Мастер и Маргарита')
+        collector.add_new_book('Мастер и Маргарита')
+        assert len(collector.get_books_genre()) == 1
+
     @pytest.mark.parametrize(
         "book_name,expected_result",
         [
